@@ -1,0 +1,38 @@
+*.jar
+target/
+tmp/
+settings.xml
+*.properties
+
+# IDEA
+.idea
+*.iml
+.idea_modules
+
+#GIT
+.gitreview
+
+#MacOS
+.DS_Store
+jacoco.exec
+
+### Scala template
+*.class
+*.log
+
+### JAVA
+.jvmopts
+
+### Local config
+processor/src/main/resources/local.conf
+
+### Python
+**/__pycache__
+venv
+scripts/tooling
+
+### Generated files
+processor/generated
+streaming/generated
+pipeline-config-deploy.conf
+pipeline-job-deploy.conf
