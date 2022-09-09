@@ -37,7 +37,39 @@ public class LevelOrderTraversal {
         printLevelOrder_Queue(root);
         printLevelOrder_Function(root);
         printLevelOrder_Spiral(root);
+        printLevelOrder_LineByLine(root);
 
+    }
+
+    /**
+     * <a href="https://www.geeksforgeeks.org/level-order-traversal-line-line-set-3-using-one-queue/">Level Order Line By Line</a>
+     * @param root
+     */
+    private static void printLevelOrder_LineByLine(Node root) {
+        System.out.println("\n Level Order Line by Line:");
+        if(root == null) return;
+
+        // Adding null in queue as delimiter to identify next level.
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        queue.add(null);
+
+        Node current;
+        while(!queue.isEmpty()){
+
+            current = queue.remove();
+            if(current!=null){
+
+                System.out.print(current.val + " ");
+                if(current.left!=null) queue.add(current.left);
+                if(current.right!=null) queue.add(current.right);
+
+                if(queue.peek() == null) queue.add(null);
+
+            } else {
+                System.out.println();
+            }
+        }
     }
 
     /**
